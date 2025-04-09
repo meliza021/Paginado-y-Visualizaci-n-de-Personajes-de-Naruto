@@ -34,13 +34,13 @@ const dataCharacters = (characters) =>{
             ? `Title: ${character.personal.titles[0]}`
             : character.personal.birthdate
             ? `Birthdate: ${character.personal.birthdate}`
-            : "Sin título ni cumpleaños";
+            : "no existe ni tituo ni un cumplaños";
 
             
           const clan =
             character.personal.clan !== undefined
           ? character.personal.clan
-          : "no existe ningun clan ninja";
+          : "eche y donde est le plan ninja";
 
           const genre = 
           character.personal.sex != "Male" && character.personal.sex != "Female"?
@@ -71,9 +71,9 @@ const pageButtons = () => {
     const totalPages = Math.ceil(allCharacters.length / itemsPerPage);
     buttons.innerHTML = `
     <div class="buttons">
-      <button ${currentPage === 1 ? "disabled" : ""} id="prev">Previous</button>
+      <button ${currentPage === 1 ? "disabled" : ""} id="prev">antes</button>
       <span> Page ${currentPage} of ${totalPages} </span>
-      <button ${currentPage === totalPages ? "disabled" : ""} id="next">Next</button>
+      <button ${currentPage === totalPages ? "disabled" : ""} id="next">despues</button>
     </div>
       `;
   
