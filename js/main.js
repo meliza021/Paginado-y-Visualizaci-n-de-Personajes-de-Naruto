@@ -40,7 +40,7 @@ const dataCharacters = (characters) =>{
           const clan =
             character.personal.clan !== undefined
           ? character.personal.clan
-          : "No clan 😂";
+          : "no existe ningun clan ninja";
 
           const genre = 
           character.personal.sex != "Male" && character.personal.sex != "Female"?
