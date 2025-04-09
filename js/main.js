@@ -5,7 +5,7 @@ let btnNext;
 let btnPrevious;
 let templateHtml;
 let currentPage = 1;
-const itemsPerPage = 8;
+const itemsPerPage = 4;
 let allCharacters = []; 
 
 const getCharacters= async(url) =>{
@@ -52,7 +52,7 @@ const dataCharacters = (characters) =>{
             <img  class="image__characters"src="${character.images[0]}" alt=${character.name}>
             <div class="information__container">
                 <h2 class="character__name"> ${character.name} </h2>
-                <h2 class="character__sex"> ${genre} </h3>
+                <h2 class="character__sexx"> ${genre} </h3>
                 <h2 class="character__clan"> Clan: ${clan} </h2>
                 <h2 class="character__title">  ${titulo} </h2>
             </div>
@@ -100,3 +100,4 @@ const pageButtons = () => {
     pageButtons();
   };
     
+  
