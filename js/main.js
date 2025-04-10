@@ -1,9 +1,9 @@
 
 const dataCharacters = (characters) => {
     lists__characters.innerHTML = characters.map(character => {
-        const title = character.personal.titles?.[0] || character.personal.birthdate || "No title or birthdate";
+        const title = character.personal.titles?.[0] || character.personal.birthdate || "no existe ni tituo ni un cumplaños";
         const clan = character.personal.clan || "Unknown Clan";
-        const gender = (character.personal.sex !== "Male" && character.personal.sex !== "Female") ? "Various" : character.personal.sex;
+        const gender = (character.personal.sex !== "Male" && character.personal.sex !== "Female") ? "eche y donde est le plan ninja" : character.personal.sex;
 
         return `
             <div class="character__container">
