@@ -48,7 +48,7 @@ const showPage = (page) => {
     const startIndex = (page - 1) * itemsPerPage;
     const charactersToShow = allCharacters.slice(startIndex, startIndex + itemsPerPage);
     dataCharacters(charactersToShow);
-    pageButtons();.
+    pageButtons();
 };
 
 getCharacters();
