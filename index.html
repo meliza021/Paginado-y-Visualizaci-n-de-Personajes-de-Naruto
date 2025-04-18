@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dattebayo Gallery</title>
-  <link rel="stylesheet" href="./src/css/style.css">
-  <script src="./js/main.js" type="module" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Naruto</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script type="module" src="./js/main.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Naruto Characters Gallery</h1>
-    <div id="cards-container" class="cards-container">
-        
-  </div>
+    <header class="header">
+        <div class="header-content">
+            <h1>Personajes de Naruto</h1>
+            <p>Descubre información sobre los ninjas de Konoha y más allá</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="cards-container" class="cards-container"></div>
+        <div id="pagination-container" class="pagination-controls"></div>
+    </main>
+
+    <footer class="footer">
+        <p>Datos obtenidos de Dattebayo API | Desarrollado con ❤️ y chakra</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,115 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Variables de colores */
+:root {
+    --naruto-orange: #ff6b01;
+    --naruto-blue: #002c5f;
+    --naruto-red: #ce2029;
+    --naruto-black: #2c2c2c;
+    --naruto-gray: #f3f3f3;
+}
+
+/* Estilos generales */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "ninja" ;
 }
 
 body {
-  background-color: #f5f5f5;
-  padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* Decoración - símbolos de Konoha en el fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 107, 1, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(0, 44, 95, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 50% 50%, rgba(206, 32, 41, 0.1) 0%, transparent 15%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* Estilos del encabezado */
+.header {
+    background-color: var(--naruto-orange);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 4px solid var(--naruto-black);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 7rem;
+    position: relative;
+    overflow: hidden;
+    top:-2rem
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background-image: url('https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/simple-icons.svg');
+    background-repeat: repeat;
+    opacity: 0.05;
+    z-index: 0;
+    transform: rotate(-5deg);
+}
+
+.header-content {
+    position: relative;
+
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Contenedor principal */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
+/* Estilos de las tarjetas */
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .card {
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 2px solid transparent;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: var(--naruto-orange);
 }
 
 .card-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--naruto-orange);
 }
 
 .card-content {
-  padding: 1rem;
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.card-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #333;
+.card-content a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--naruto-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.card-head {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.5rem;
+.card-content a:hover {
+    color: var(--naruto-orange);
 }
 
-.card-description {
-  font-size: 0.85rem;
-  color: #777;
-  line-height: 1.4;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
-}
-
-.pagination button {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.pagination button:hover {
-  background-color: #f0f0f0;
-}
-
-.pagination button.active {
-  background-color: #6200ee;
-  color: white;
-  border-color: #6200ee;
-}
-
-.pagination button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-@media (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+.card-content p {
+    margin-bottom: 0.5rem;
+    color: var(--naruto-black);
+    font-family: "ninja" ;
   }
+
+.card-content p:nth-child(2) {
+    font-weight: 600;
+    color: var(--naruto-red);
+    font-family: "ninja" ;
+  }
+
+/* Controles de paginación */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+.pagination-controls button {
+    background-color: var(--naruto-blue);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pagination-controls button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.pagination-controls button:hover::before {
+    left: 100%;
+}
+
+.pagination-controls button:hover {
+    background-color: var(--naruto-orange);
+    transform: scale(1.05);
+}
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.page-indicator {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--naruto-black);
+    padding: 0.5rem 1rem;
+    background-color: var(--naruto-gray);
+    border-radius: 4px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--naruto-black);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 21rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+        font-family: "ninja" ;
+    }
+    
+    .header p {
+        font-size: 1rem;
+        font-family: "ninja" ;
+    }
 }
 
 @media (max-width: 480px) {
-  .cards-container {
-    grid-template-columns: 1fr;
-  }
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .pagination-controls {
+        flex-direction: column;
+    }
 }
